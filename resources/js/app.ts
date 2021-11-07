@@ -27,8 +27,12 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import { createApp } from 'vue'
+import { createApp, Component } from 'vue'
 import router from './router'
 import store from './store'
+import DefaultLayout from './components/layouts/DefaultLayout.vue'
 
-createApp(App).use(store).use(router).mount('#app')
+//Определяем шаблон страницы
+const currentLayout = router.currentRoute.value.meta.layout as Component ?? DefaultLayout;
+
+createApp(currentLayout).use(store).use(router).mount('#app')
