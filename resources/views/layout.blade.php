@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Awesomeapp @yield('title')</title>
+
+        <link rel="stylesheet" type="text/css" href="{{ mix('/css/app.css') }}">
     </head>
     <body class="@yield('page-type')-page">
         <div id="app">

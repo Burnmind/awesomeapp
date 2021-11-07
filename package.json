@@ -43,5 +43,8 @@
         "vue-loader": "^16.8.3",
         "vue-router": "^4.0.0-0",
         "vuex": "^4.0.0-0"
+    },
+    "dependencies": {
+        "pixi.js": "^6.2.0"
     }
 }
