@@ -15,6 +15,7 @@ export default class Firefly {
 
     constructor() {
         this.firefly = new PIXI.Container();
+
         this.lightSprite = PIXI.Sprite.from('images/firefly.png');
         this.darkSprite = PIXI.Sprite.from('images/dark-firefly.png');
 
@@ -34,14 +35,15 @@ export default class Firefly {
         this.vector = new Vector();
 
         const scale = Firefly.getNewScale();
-        this.lightSprite.scale.set(scale, scale);
-        this.darkSprite.scale.set(scale, scale);
+        this.lightSprite.scale.set(scale);
+        this.darkSprite.scale.set(scale);
 
         this.scaleSpeed = Firefly.getNewScaleSpeed();
         this.newScale = Firefly.getNewScale();
     }
 
     getFireflyContainer() {
+        console.log(this.firefly)
         return this.firefly;
     }
 
@@ -75,7 +77,7 @@ export default class Firefly {
         const y = this.firefly.y + YOffset;
         let overflow = false;
 
-        if (x - window.innerWidth/2 > 0) {
+        if (x - window.innerWidth / 2 > 0) {
             this.firefly.x = window.innerWidth/2;
             overflow = true;
         } else if (-window.innerWidth/2 - x >= 0) {
@@ -83,7 +85,7 @@ export default class Firefly {
             overflow = true;
         }
 
-        if (y - window.innerHeight/2 > 0) {
+        if (y - window.innerHeight / 2 > 0) {
             this.firefly.y = window.innerHeight/2;
             overflow = true;
         } else if (-window.innerHeight/2 - y >= 0) {

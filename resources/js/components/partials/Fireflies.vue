@@ -11,7 +11,7 @@
         protected pixi = new PIXI.Application({
             width: window.innerWidth,
             height: window.innerHeight,
-            transparent: true
+            backgroundAlpha: 0
         });
         protected quantity = 50;
 

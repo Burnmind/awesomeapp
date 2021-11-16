@@ -60584,7 +60584,7 @@ var Fireflies = /*#__PURE__*/function (_Vue) {
     (0,C_Users_home_Desktop_Programming_Projects_awesomeapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])((0,C_Users_home_Desktop_Programming_Projects_awesomeapp_node_modules_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this), "pixi", new pixi_js__WEBPACK_IMPORTED_MODULE_10__.Application({
       width: window.innerWidth,
       height: window.innerHeight,
-      transparent: true
+      backgroundAlpha: 0
     }));
 
     (0,C_Users_home_Desktop_Programming_Projects_awesomeapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])((0,C_Users_home_Desktop_Programming_Projects_awesomeapp_node_modules_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this), "quantity", 50);
@@ -60765,7 +60765,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./router */ "./resources/js/router/index.ts");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.ts");
 /* harmony import */ var _components_layouts_DefaultLayout_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/layouts/DefaultLayout.vue */ "./resources/js/components/layouts/DefaultLayout.vue");
-var _router$currentRoute$;
+var _router$resolve$meta$;
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -60797,7 +60797,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.ts"); // @ts-ig
 
  //Определяем шаблон страницы
 
-var currentLayout = (_router$currentRoute$ = _router__WEBPACK_IMPORTED_MODULE_1__["default"].currentRoute.value.meta.layout) !== null && _router$currentRoute$ !== void 0 ? _router$currentRoute$ : _components_layouts_DefaultLayout_vue__WEBPACK_IMPORTED_MODULE_3__["default"];
+var href = _router__WEBPACK_IMPORTED_MODULE_1__["default"].currentRoute.value.path;
+var currentLayout = (_router$resolve$meta$ = _router__WEBPACK_IMPORTED_MODULE_1__["default"].resolve(href).meta.layout) !== null && _router$resolve$meta$ !== void 0 ? _router$resolve$meta$ : _components_layouts_DefaultLayout_vue__WEBPACK_IMPORTED_MODULE_3__["default"];
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(currentLayout).use(_store__WEBPACK_IMPORTED_MODULE_2__["default"]).use(_router__WEBPACK_IMPORTED_MODULE_1__["default"]).mount('#app');
 
 /***/ }),
@@ -60976,8 +60977,8 @@ var Firefly = /*#__PURE__*/function () {
     this.firefly.y = Firefly.getNewY();
     this.vector = new _partials_firefly_properties_vector_Vector__WEBPACK_IMPORTED_MODULE_5__["default"]();
     var scale = Firefly.getNewScale();
-    this.lightSprite.scale.set(scale, scale);
-    this.darkSprite.scale.set(scale, scale);
+    this.lightSprite.scale.set(scale);
+    this.darkSprite.scale.set(scale);
     this.scaleSpeed = Firefly.getNewScaleSpeed();
     this.newScale = Firefly.getNewScale();
   }
@@ -60985,6 +60986,7 @@ var Firefly = /*#__PURE__*/function () {
   (0,C_Users_home_Desktop_Programming_Projects_awesomeapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Firefly, [{
     key: "getFireflyContainer",
     value: function getFireflyContainer() {
+      console.log(this.firefly);
       return this.firefly;
     }
   }, {

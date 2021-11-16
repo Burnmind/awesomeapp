@@ -33,6 +33,7 @@ import store from './store'
 import DefaultLayout from './components/layouts/DefaultLayout.vue'
 
 //Определяем шаблон страницы
-const currentLayout = router.currentRoute.value.meta.layout as Component ?? DefaultLayout;
+const href = router.currentRoute.value.path;
+const currentLayout = router.resolve(href).meta.layout as Component ?? DefaultLayout;
 
 createApp(currentLayout).use(store).use(router).mount('#app')
