@@ -15,9 +15,12 @@ export default class Firefly {
 
     constructor() {
         this.firefly = new PIXI.Container();
-
-        this.lightSprite = PIXI.Sprite.from('images/firefly.png');
-        this.darkSprite = PIXI.Sprite.from('images/dark-firefly.png');
+        
+        const lightTexture = PIXI.Texture.from('images/firefly.png');
+        const darkTexture = PIXI.Texture.from('images/firefly.png');
+        
+        this.lightSprite = PIXI.Sprite.from(lightTexture);
+        this.darkSprite = PIXI.Sprite.from(darkTexture);
 
         this.lightSprite.anchor.set(0.5);
         this.darkSprite.anchor.set(0.5);
@@ -42,12 +45,11 @@ export default class Firefly {
         this.newScale = Firefly.getNewScale();
     }
 
-    getFireflyContainer() {
-        console.log(this.firefly)
+    getFireflyContainer(): PIXI.Container {
         return this.firefly;
     }
 
-    step() {
+    step(): void {
         let XOffset = this.vector.getXOffset();
         let YOffset = this.vector.getYOffset();
 

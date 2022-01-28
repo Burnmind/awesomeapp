@@ -1,12 +1,9 @@
 import Property from "@/partials/firefly/properties/Property";
 
 export default class Vector extends Property {
-    // @ts-ignore
-    private length: number;
-    // @ts-ignore
-    private rad: number;
-    // @ts-ignore
-    private newRad: number;
+    private length = 0;
+    private rad = 0;
+    private newRad = 0;
     private changeRadSpeed = 0.01;
     private increment: boolean;
 
@@ -18,6 +15,7 @@ export default class Vector extends Property {
         this.increment = true;
 
         this.initLength();
+        this.initRad();
     }
 
     protected setValues(): void {

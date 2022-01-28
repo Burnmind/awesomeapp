@@ -38,9 +38,15 @@
 
 <style scoped lang="scss">
     .fireflies {
-        position: absolute;
-        pointer-events: none;
-        left: 0;
-        top: 0;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+
+        canvas {
+            position: absolute;
+            pointer-events: none;
+            left: 0;
+            top: 0;
+        }
     }
 </style>

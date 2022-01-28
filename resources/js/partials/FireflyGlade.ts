@@ -20,17 +20,17 @@ export default class FireflyGlade {
         window.addEventListener('resize', this.containerToCenter.bind(this));
     }
 
-    playFrame() {
+    playFrame(): void {
         this.fireflyList.forEach((firefly) => {
             firefly.step();
         });
     }
 
-    getContainer() {
+    getContainer(): PIXI.Container {
         return this.container;
     }
 
-    containerToCenter() {
+    containerToCenter(): void {
         this.container.x = window.innerWidth / 2;
         this.container.y = window.innerHeight / 2;
     }
