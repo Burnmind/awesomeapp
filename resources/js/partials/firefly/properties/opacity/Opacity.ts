@@ -57,10 +57,10 @@ export default class Opacity extends Property {
     }
 
     protected getNewSpeed(): number {
-        return 0.05 + Math.random() * 0.1;
+        return 0.01;
     }
 
     protected getChangeIndex(): number {
-        return -(Math.round(-70 + Math.random() * 140));
+        return -(Math.round(30 + Math.random() * 100));
     }
 }

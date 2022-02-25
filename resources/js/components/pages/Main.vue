@@ -1,11 +1,11 @@
 <template>
-  <div class="home">
-    <Fireflies/>
-  </div>
+    <div class="home">
+        <Fireflies/>
+    </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+import {Options, Vue} from 'vue-class-component';
 import Fireflies from "@/components/partials/Fireflies.vue";
 
 @Options({
@@ -13,5 +13,6 @@ import Fireflies from "@/components/partials/Fireflies.vue";
         Fireflies
     }
 })
-export default class Main extends Vue {}
+export default class Main extends Vue {
+}
 </script>

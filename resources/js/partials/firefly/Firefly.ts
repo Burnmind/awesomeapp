@@ -118,7 +118,7 @@ export default class Firefly {
     }
 
     private static getNewScaleSpeed(): number {
-        return 0.007 + Math.random() * 0.023;
+        return 0.007 + Math.random() * 0.01;
     }
 
     private static getNewScale(): number {

@@ -61060,7 +61060,7 @@ var Firefly = /*#__PURE__*/function () {
   }], [{
     key: "getNewScaleSpeed",
     value: function getNewScaleSpeed() {
-      return 0.007 + Math.random() * 0.023;
+      return 0.007 + Math.random() * 0.01;
     }
   }, {
     key: "getNewScale",
@@ -61256,12 +61256,12 @@ var Opacity = /*#__PURE__*/function (_Property) {
   }, {
     key: "getNewSpeed",
     value: function getNewSpeed() {
-      return 0.05 + Math.random() * 0.1;
+      return 0.01;
     }
   }, {
     key: "getChangeIndex",
     value: function getChangeIndex() {
-      return -Math.round(-70 + Math.random() * 140);
+      return -Math.round(30 + Math.random() * 100);
     }
   }], [{
     key: "getRandomOpacity",
@@ -64589,7 +64589,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".fireflies[data-v-3ec398ee] {\n  position: relative;\n  display: flex;\n  overflow: hidden;\n}\n.fireflies canvas[data-v-3ec398ee] {\n  position: absolute;\n  pointer-events: none;\n  left: 0;\n  top: 0;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".fireflies[data-v-3ec398ee] {\n  position: absolute;\n  display: flex;\n  overflow: hidden;\n  left: 0;\n  top: 0;\n}\n.fireflies canvas[data-v-3ec398ee] {\n  position: absolute;\n  pointer-events: none;\n  left: 0;\n  top: 0;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -10028,3 +10028,6 @@ body {
 .main-page {
   background: black;
 }
+.main-page img {
+  z-index: 1;
+}
