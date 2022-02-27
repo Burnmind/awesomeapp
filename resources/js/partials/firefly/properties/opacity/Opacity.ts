@@ -1,16 +1,15 @@
 import Property from "@/partials/firefly/properties/Property";
 
 export default class Opacity extends Property {
-    // @ts-ignore
-    private opacity: number;
-    // @ts-ignore
-    private newOpacity: number;
+    private opacity = Opacity.getRandomOpacity();
+    private newOpacity = Opacity.getRandomOpacity();
+
     // @ts-ignore
     private timeFunctionValue: number;
     private setTimeFunctionValue = true;
 
     protected setValues(): void {
-        if (this.newOpacity != undefined) {
+        if (this.newOpacity) {
             this.opacity = this.newOpacity;
         } else {
             this.opacity = Opacity.getRandomOpacity();
@@ -25,8 +24,8 @@ export default class Opacity extends Property {
 
     private getNextOpacity(): number {
         let newOpacity;
-        if (this.newOpacity == undefined) {
-            newOpacity = Math.round(Math.random());
+        if (!this.newOpacity) {
+            newOpacity = Opacity.getRandomOpacity();
         } else {
             newOpacity = 1 - this.newOpacity;
         }
@@ -53,11 +52,11 @@ export default class Opacity extends Property {
             this.setTimeFunctionValue = true;
         }
 
-        return opacity + (newOpacity - opacity) * this.timeFunctionValue;
+        return Math.round((opacity + (newOpacity - opacity) * this.timeFunctionValue) * 1000) / 1000;
     }
 
     protected getNewSpeed(): number {
-        return 0.01;
+        return 0.05;
     }
 
     protected getChangeIndex(): number {

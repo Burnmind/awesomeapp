@@ -1,0 +1,102 @@
+@import "../variables";
+@import "../mixins";
+
+.reading-club-page {
+  .auth-container {
+    @include flex-center;
+    height: 100vh;
+  }
+
+  .participants-container {
+    display: flex;
+    overflow: auto;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .participants-list {
+    display: flex;
+  }
+
+  .participant-column {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    border-right: 1px solid $gray;
+
+    &:last-of-type {
+      border-right: 1px solid transparent;
+    }
+
+    &.add {
+      display: flex;
+      align-items: center;
+      padding-top: 40px;
+      cursor: pointer;
+      transition: $tr-time;
+
+      &:hover {
+        background: $background-hover;
+      }
+
+      .icon-plus {
+        width: 50px;
+        height: 50px;
+        border: 3px solid $white;
+        font-size: 50px;
+      }
+    }
+
+    .personal-info {
+      padding: 20px 0;
+      border-bottom: 1px solid $white;
+    }
+
+    .photo {
+      padding: 0 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .book-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px;
+      height: 33px;
+      border-bottom: 1px solid $gray;
+
+      &.add {
+        cursor: pointer;
+        transition: $tr-time;
+
+        &:hover {
+          background: $background-hover;
+        }
+      }
+
+      .remove {
+        @include flex-center;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        transition: $tr-time;
+
+        &:hover {
+          background: $background-hover;
+        }
+      }
+    }
+
+    .icon-plus {
+      @include flex-center;
+      width: 15px;
+      height: 15px;
+      border: 1px solid $white;
+      border-radius: 100%;
+      line-height: 1;
+    }
+  }
+}

@@ -1,5 +1,22 @@
+@import "variables";
+
+* {
+    box-sizing: border-box;
+    font-family: $font-family-sans-serif;
+}
+
 body {
     position: relative;
+    margin: 0;
     height: 100%;
     min-height: 100vh;
+    background: $background-dark;
+    color: $white;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    max-width: 1430px;
 }

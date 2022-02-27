@@ -17,7 +17,7 @@ export default class Firefly {
         this.firefly = new PIXI.Container();
         
         const lightTexture = PIXI.Texture.from('images/firefly.png');
-        const darkTexture = PIXI.Texture.from('images/firefly.png');
+        const darkTexture = PIXI.Texture.from('images/dark-firefly.png');
         
         this.lightSprite = PIXI.Sprite.from(lightTexture);
         this.darkSprite = PIXI.Sprite.from(darkTexture);

@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages/main');
 });
+
+Route::get('/reading-club', fn() => view('pages/reading-club'))->name('reading-club');
