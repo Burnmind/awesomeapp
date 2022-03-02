@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use function redirect;
 
 class SocialController extends Controller
 {
@@ -19,7 +20,7 @@ class SocialController extends Controller
         return Socialite::driver('vkontakte')->redirect();
     }
 
-    public function callback(): Redirector|Application|\Illuminate\Http\RedirectResponse
+    public function callback(Request $request): Redirector|Application|\Illuminate\Http\RedirectResponse
     {
         $socialiteUser = Socialite::driver('vkontakte')->user();
         $user = User::query()->where(['email' => $socialiteUser->getEmail()])->first();
@@ -36,6 +37,6 @@ class SocialController extends Controller
 
         Auth::login($user);
 
-        return redirect('reading-club');
+        return redirect()->route('reading-club');
     }
 }

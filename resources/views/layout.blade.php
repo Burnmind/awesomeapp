@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="{{ mix('/css/app.css') }}">
     </head>
     <body class="@yield('page-type')-page">
+
         <div id="app">
             @yield('content')
         </div>

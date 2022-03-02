@@ -9,11 +9,11 @@ services:
     volumes:
       # Монтируем папку из нашей ос
       - .:/var/www/html
-  mariadb:
-    image: 'bitnami/mariadb:latest'
+  postgres:
+    image: postgres
     environment:
-      - MARIADB_ROOT_PASSWORD=laravelpass
+      - POSTGRES_PASSWORD=laravelpass
     ports:
-      - '3307:3306'
+      - '54320:5432'
     volumes:
-      - ./storage/docker/mysql:/bitnami
+      - ./storage/docker/postgres:/var/lib/postgresql/data

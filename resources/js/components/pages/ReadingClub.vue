@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div v-if="!showList" class="auth-container">
+        <div v-if="appData && !appData.isAuth" class="auth-container">
             <button class="btn-lg" v-on:click="auth">Войти</button>
         </div>
         <div v-else class="participants-container">
@@ -53,14 +53,22 @@
 </template>
 
 <script lang="ts">
-    import {Options, Vue} from 'vue-class-component';
-    import axios from "axios";
+    import { Vue } from 'vue-class-component';
+    import {useStore} from "vuex";
+    import {AppData} from "@/types";
 
     export default class ReadingClub extends Vue {
-        private showList = false;
+        private appData = {} as AppData;
 
-        auth() {
-            window.open('/api/vk/auth');
+        mounted(): void
+        {
+            const store = useStore();
+            this.appData = store.state;
+        }
+
+        auth(): void
+        {
+            window.open('/vk/auth');
         }
     }
 </script>
